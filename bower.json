@@ -1,0 +1,22 @@
+{
+  "name": "poc_react",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Iván Corrales Solera <developer@wesovi.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies":{
+
+
+  }
+}
