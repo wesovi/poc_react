@@ -4,15 +4,14 @@ import ListItem from './../commons/list-items-item/ListItemsItem'
 
 export default class Home extends React.Component {
 
+    constructor(props){
+        super(props);
+    }
+
     render(){
         return (
-            <ListItems>
-                <ListItem/>
-                <ListItem/>
-                <ListItem/>
-            </ListItems>
+            <ListItems/>
         )
-
     }
 
 }

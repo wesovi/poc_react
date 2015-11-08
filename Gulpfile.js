@@ -1,12 +1,19 @@
 var requireDir = require('require-dir');
 var tasks = requireDir('./gulp-tasks');
 var gulp = require('gulp');
-//var browserSync = require('browser-sync');
+var watch = require('gulp-watch');
+var browserSync = require('browser-sync');
+var package = require('./package.json');
+var gulpSequence = require('gulp-sequence');
 
 
+gulp.task('default',gulpSequence('clean','check', ['sass', 'html','scripts'],'watch'));
 
-
-gulp.task('default', ['clean', 'eslint', 'sass', 'html','scripts']);
+gulp.task('watch',function(){
+    gulp.watch(package.paths.jsx,[gulpSequence('check','scripts')]);
+    gulp.watch(package.paths.html,['html']);
+    gulp.watch(package.paths.scss,['sass']);
+});
 
 /**
 gulp

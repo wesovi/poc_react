@@ -5,6 +5,6 @@ var del = require('del');
 var gulp = require('gulp');
 
 
-gulp.task('clean', function(cb) {
-    del(['dist/**'], cb);
+gulp.task('clean', function() {
+    del(['dist/**']);
 })

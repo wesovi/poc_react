@@ -4,7 +4,7 @@
 var gulp = require('gulp'),
     eslint = require('gulp-eslint');
 
-gulp.task('eslint', function ()
+gulp.task('check', function ()
 {
     return gulp.src('./src/**/*.jsx')
         .pipe(eslint())
