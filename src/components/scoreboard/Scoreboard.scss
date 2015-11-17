@@ -1,0 +1,44 @@
+$scoreboard-bg: #000000;
+$scoreboard-panel-lose-bg: #ff0330;
+$scoreboard-panel-win-bg: #0fff22;
+$scoreboard-panel-draw-bg: #ffffff;
+$scoreboard-bg: #000000;
+$scoreboard-panel-color:#000000;
+$scoreboard-panel-width:100%;
+$scoreboard-panel-font-size: 5em;
+
+
+
+.scoreboard-component{
+  background:$scoreboard-bg;
+  display: block;
+  h3{
+    background: $scoreboard-bg;
+  }
+  div.panel{
+
+    background: $scoreboard-bg;
+    text-align: center;
+    input{
+
+      display: block;
+      color: $scoreboard-panel-color;;
+      width:$scoreboard-panel-width;
+      font-size: $scoreboard-panel-font-size;
+      text-align: center;
+      border: 0.1em solid #000000;
+      background: $scoreboard-panel-draw-bg;
+      &.win{
+        background: $scoreboard-panel-win-bg;
+      }
+      &.lose{
+        background: $scoreboard-panel-lose-bg;
+      }
+    }
+    button{
+      width:33.3%;
+    }
+
+  }
+
+}

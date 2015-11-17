@@ -11,6 +11,8 @@ var plumber      = require('gulp-plumber');
 var reload       = browserSync.reload;
 var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
+var minifyCSS    = require('gulp-minify-css');
+var concat    = require('gulp-concat');
 
 var onError = function(err) {
     notify.onError({
@@ -24,6 +26,9 @@ var plumberOptions = {
     errorHandler: onError,
 };
 
+var SRC= ['./src/components/**/*.scss','./assets/stylesheets/**/*.scss'];
+var DEST = 'dist/stylesheets/';
+
 
 gulp.task('sass:watch', function () {
     gulp.watch('./assets/stylesheets/**/*.scss', ['sass']);
@@ -34,7 +39,7 @@ gulp.task('sass', function() {
         browsers: ['last 2 versions'],
     };
 
-    var filterOptions = '**/*.css';
+    var filterOptions = ['*.css', '!*.map'];
 
     var reloadOptions = {
         stream: true,
@@ -45,14 +50,16 @@ gulp.task('sass', function() {
 
         ]
     };
-//'./assets/stylesheets/**/*.scss',
-    return gulp.src('./src/components/**/*.scss')
+
+    return gulp.src(SRC)
         .pipe(plumber(plumberOptions))
         .pipe(sourcemaps.init())
         .pipe(sass(sassOptions))
-        .pipe(autoprefixer(autoprefixerOptions))
+        .pipe(autoprefixer({autoprefixerOptions, cascade:true}))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('dist/css'))
+        .pipe(concat('../bundle.css'))
+        .pipe(minifyCSS({keepBreaks:true}))
+        .pipe(gulp.dest(DEST))
         .pipe(filter(filterOptions))
         .pipe(reload(reloadOptions));
 });

@@ -7,10 +7,10 @@ var package = require('./package.json');
 var gulpSequence = require('gulp-sequence');
 
 
-gulp.task('default',gulpSequence('clean','check', ['sass', 'html','scripts'],'watch'));
+gulp.task('default',gulpSequence('clean','check', ['sass', 'html','webpack'],'watch'));
 
 gulp.task('watch',function(){
-    gulp.watch(package.paths.jsx,[gulpSequence('check','scripts')]);
+    gulp.watch(package.paths.jsx,[gulpSequence('check','webpack')]);
     gulp.watch(package.paths.html,['html']);
     gulp.watch(package.paths.scss,['sass']);
 });

@@ -1,0 +1,19 @@
+$blueButton: #2d13dd;
+$greenButton: #07744b;
+$redButton: #b3281e;
+
+
+select.combo{
+  width: 100%;
+  border-radius: 2em;
+  background: $greenButton;
+  height: 3em;
+  margin-bottom:0.5em;
+  margin-top:0.5em;
+  option{
+    color:#ffffff;
+    text-align: center;
+    padding:0;
+  }
+
+}

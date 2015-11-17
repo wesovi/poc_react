@@ -1,0 +1,20 @@
+$blueButton: #2d13dd;
+$greenButton: #0fdd8f;
+$redButton: #b3281e;
+
+
+.button-component{
+ color: #ffffff;
+  &.big{
+    padding:2em;
+  },
+  &.blue{
+    background: $blueButton;
+  },
+  &.red{
+    background: $redButton;
+  },
+  &.green{
+    background: $greenButton;
+  }
+}
