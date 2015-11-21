@@ -21,7 +21,7 @@ In progress
 ## Contributors
 
 + Iván Corrales Solera <developer@wesovi.com>, [http://www.wesovi.com](http://www.wesovi.com)
-+ Nicolás Quiceno Benávides <email@mail.com>, [site]()
+
 
 
 ## License
